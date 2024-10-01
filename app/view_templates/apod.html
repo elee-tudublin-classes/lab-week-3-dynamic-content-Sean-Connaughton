@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "./partials/head.html" ignore missing with context %}
+    <title>Apod</title>
+</head>
+<body>
+    <!-- include navbar from partials -->
+    {% include "./partials/nav.html" ignore missing with context %}
+
+    <h1>Nasa astronomical photo of the day</h1>
+    <div class="ms-2 mt-2"></div>
+        <p>Date: {{data.date}}</p>
+        <div>
+            <img src={{data.url}} alt="Nasa astronomical photo of the day">
+        </div>
+        <div>
+            <img src={{data.thumbnail_url}} alt="APOD video thumbnail">
+            <a href={{data.url}}>Video</a>
+        </div>
+        <hr>
+        <h5>Info:</h5>
+        <p>{{data.explanation}}</p>
+    </div>
+
+    <!-- Load common CSS and JS -->
+    {% include "./partials/dependencies.html" ignore missing with context %}
+</body>
+</html>
